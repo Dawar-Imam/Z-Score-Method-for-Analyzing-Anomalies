@@ -22,8 +22,7 @@ The dataset "Queries.csv" contains search queries that lead users to a specific 
 Top Queries:                Actual search terms used by users.
 Clicks:                     The number of times users clicked on the website after using the query.
 Impressions:                The number of times the website appeared in search results for the query.
-CTR (Click Through Rate):   The ratio of clicks to impressions, indicating the effectiveness of the query in leading 
-                            users to the website.
+CTR (Click Through Rate):   The ratio of clicks to impressions, indicating the effectiveness of the query in leading users to the website.
 Position:                   The average ranking of the website in search results for the query.
 ```
 The goal of the analysis is to detect anomalies in search queries, which are queries that perform significantly differently from the majority. Anomalies can be identified based on metrics such as clicks, impressions, CTR, and search position. Anomaly detection techniques like Z-score analysis or machine learning algorithms can be applied to find these unusual patterns in the dataset.
