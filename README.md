@@ -16,36 +16,63 @@ pip install -r requirements.txt
 
 ## Dataset Description
 
-The dataset contains information about restaurant bills, including the total bill, tip amount, gender of the person giving the tip, smoker status, day of the week, time of day, and size of the dining party. Each feature is described as follows:
+The dataset "Queries.csv" contains search queries that lead users to a specific website, along with associated metrics. Here are the details of the columns in the dataset:
 
 ```bash
-total_bill:            Total bill of the customers.
-tip:                   Amount of tip given.
-sex:                   Gender of the person giving the tip.
-smoker:                Smoker status (yes/no).
-day:                   Day of the week when the transaction occurred (Thursday to Sunday).
-time:                  Time of day when the transaction occurred (lunch or dinner).
-size:                  Number of people for dining.
+Top Queries:                Actual search terms used by users.
+Clicks:                     The number of times users clicked on the website after using the query.
+Impressions:                The number of times the website appeared in search results for the query.
+CTR (Click Through Rate):   The ratio of clicks to impressions, indicating the effectiveness of the query in leading 
+                            users to the website.
+Position:                   The average ranking of the website in search results for the query.
 ```
-Statistics of the dataset are also shown during program execution, as well as null values inside the data columns.
+The goal of the analysis is to detect anomalies in search queries, which are queries that perform significantly differently from the majority. Anomalies can be identified based on metrics such as clicks, impressions, CTR, and search position. Anomaly detection techniques like Z-score analysis or machine learning algorithms can be applied to find these unusual patterns in the dataset.
+
+```bash
+Descriptive Statistics:
+          Clicks   Impressions     Position
+count  1000.0000   1000.000000  1000.000000
+mean    172.2750   1939.466000     3.985930
+std     281.0221   4856.702605     2.841842
+min      48.0000     62.000000     1.000000
+25%      64.0000    311.000000     2.010000
+50%      94.0000    590.500000     3.120000
+75%     169.0000   1582.750000     5.342500
+max    5223.0000  73380.000000    28.520000
+```
+
+Other statistics of the dataset are also shown during program execution, as well as null values inside the data columns.
 
 ## Training and Testing
 
 Run the model.py file after installing the given requirements.
 
-Dataset information composing of null value counts, feature descriptions, and statistics are shown during program execution. The data was first preprocessed, transforming all categorical values into numerical values before going into training. After cleaning and training, statistical graphs are presented, and the loss during training is also shown. Lastly testing phase prompts runs shortly for runtime prediction of amount of tips. 
+Dataset information composing of null value counts, feature descriptions, and statistics are shown during program execution. After cleaning the dataset, the histogram which is a frequency graph of occureneces of words were shown, followed by other frequency plots. 
+Here are the anomalies detected with a Z-Score of threshold 7:
 
-The model trained over above dataset acheived an average of 0.69 loss. L2 Loss was used.
+```bash
+Anomalies Detected:
+                          Top queries  Clicks  Impressions     CTR  Position
+0         number guessing game python    5223        14578  0.3583      1.61
+1                 thecleverprogrammer    2809         3456  0.8128      1.02
+2    python projects with source code    2077        73380  0.0283      5.94
+21              classification report     933        39896  0.0234      7.53
+34           machine learning roadmap     708        42715  0.0166      8.97
+82                           r2 score     367        56322  0.0065      9.33
+91     facebook programming languages     346        36055  0.0096      1.58
+167               text to handwriting     222        11283  0.0197     28.52
+232                    standardscaler     177        39267  0.0045     10.23
+858            water quality analysis      56         7359  0.0076     27.56
+```
 
 ## Graphical Results
 
-![Average Tips Given by Smokers and Non-Smokers](Graphs/Average%20Tips%20Given%20by%20Smokers%20and%20Non-Smokers.png)
-![Distribution of Tips by Day of the Week](Graphs/Distribution%20of%20Tips%20by%20Day%20of%20the%20Week.png)
-![Distribution of Tips by Gender of the Person Paying the Bill](Graphs/Distribution%20of%20Tips%20by%20Gender%20of%20the%20Person%20Paying%20the%20Bill.png)
-![Distribution of Tips by Meal Time (Lunch vs. Dinner)](Graphs/Distribution%20of%20Tips%20by%20Meal%20Time%20(Lunch%20vs.%20Dinner).png)
-![Total Bill Paid vs. Tip with Different Colors and Sizes for Gender and Table Size](Graphs/Total%20Bill%20Paid%20vs.%20Tip%20with%20Different%20Colors%20and%20Sizes%20for%20Gender%20and%20Table%20Size.png)
-![Total Bill Paid vs. Tip with Different Colors and Sizes for Meal Time and Table Size](Graphs/Total%20Bill%20Paid%20vs.%20Tip%20with%20Different%20Colors%20and%20Sizes%20for%20Meal%20Time%20and%20Table%20Size.png)
-![Total Bill Paid vs. Tip with Different Colors and Sizes for Day of Week and Table Size.png](Graphs/Total%20Bill%20Paid%20vs.%20Tip%20with%20Different%20Colors%20and%20Sizes%20for%20Day%20of%20Week%20and%20Table%20Size.png)
+![Average Tips Given by Smokers and Non-Smokers](Graphs/newplot%20(1).png)
+![Distribution of Tips by Day of the Week](Graphs/newplot%20(2).png)
+![Distribution of Tips by Gender of the Person Paying the Bill](Graphs/newplot%20(3).png)
+![Distribution of Tips by Meal Time (Lunch vs. Dinner)](Graphs/newplot%20(4).png)
+![Total Bill Paid vs. Tip with Different Colors and Sizes for Gender and Table Size](Graphs/newplot%20(5).png)
+![Correlation Matrix](Graphs/correlation_matrix_heatmap.png)
 
 
 
