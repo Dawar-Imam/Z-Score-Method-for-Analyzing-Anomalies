@@ -66,11 +66,11 @@ Anomalies Detected:
 
 ## Graphical Results
 
-![Average Tips Given by Smokers and Non-Smokers](Graphs/newplot%20(1).png)
-![Distribution of Tips by Day of the Week](Graphs/newplot%20(2).png)
-![Distribution of Tips by Gender of the Person Paying the Bill](Graphs/newplot%20(3).png)
-![Distribution of Tips by Meal Time (Lunch vs. Dinner)](Graphs/newplot%20(4).png)
-![Total Bill Paid vs. Tip with Different Colors and Sizes for Gender and Table Size](Graphs/newplot%20(5).png)
+![1](Graphs/newplot%20(1).png)
+![2](Graphs/newplot%20(2).png)
+![3](Graphs/newplot%20(3).png)
+![4](Graphs/newplot%20(4).png)
+![5](Graphs/newplot%20(5).png)
 ![Correlation Matrix](Graphs/correlation_matrix_heatmap.png)
 
 
